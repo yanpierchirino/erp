@@ -24,7 +24,7 @@ init: submodule-add pull build build-dev
 build: build-base build-dev
 
 submodule-add:
-	if [ ! -d "vendor/odoo/ce/" ]; then git submodule add --force -b 14.0 https://github.com/odoo/odoo.git vendor/odoo/ce/ ; fi
+	if [ ! -d "vendor/odoo/ce/" ]; then git submodule add --force -b $(ODOO_VERSION) https://github.com/odoo/odoo.git vendor/odoo/ce/ ; fi
 
 ### Pulling images
 pull:
