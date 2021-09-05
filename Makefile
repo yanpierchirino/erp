@@ -20,15 +20,18 @@ else
 endif
 
 
-init: pull build build-dev
+init: submodule-add pull build build-dev
+build: build-base build-dev
+
+submodule-add:
+	if [ ! -d "vendor/odoo/ce/" ]; then git submodule add --force -b 14.0 https://github.com/odoo/odoo.git vendor/odoo/ce/ ; fi
 
 ### Pulling images
 pull:
 	docker pull $(FROM):$(FROM_VERSION)
 
-
 ### Building images
-build:
+build-base:
 	docker build --tag $(IMAGE):$(ODOO_VERSION) --build-arg "FROM_IMAGE=$(FROM):$(FROM_VERSION)" .
 
 build-dev:

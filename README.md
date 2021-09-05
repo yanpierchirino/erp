@@ -22,6 +22,7 @@ Con el depurador web habilitado (que es por defecto wdb) cualquier excepción qu
 resultará en un enlace cliqueable en los registros de Odoo.
 
   * `docker-compose up erp` te dará una instalación de Odoo ejecutándose en http://localhost:8069 con habilitación de recarga de código activo y configuración del depurador web.
+  * `make build` reconstruira las imagenes base y de desarrollo agregando los nuevos cambios hechos en los archivos Dockerfile correspondientes.
 
 Investigue docker-compose.yml para obtener información adicional.
 
