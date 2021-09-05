@@ -16,7 +16,7 @@ services:
       - web-data:/var/lib/odoo
       - ./src:/mnt/src-addons/src
       - ./vendor:/mnt/vendor-addons
-      - ./vendor/odoo/ce/addons:/var/lib/odoo/addons/14.0
+      - ./vendor/odoo/ce/addons:/var/lib/odoo/addons/13.0
       - ./vendor/odoo/ce/odoo/addons:/usr/lib/python3/dist-packages/odoo/addons
     environment:
       - DB_HOST=db
