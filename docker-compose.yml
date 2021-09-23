@@ -22,10 +22,10 @@ services:
       - DB_HOST=db
       - DB_USER=gangala
       - DB_PASSWORD=M7LEA7chfE9
-      - PROXY_MODE=True
-      - LIMIT_TIME_CPU=5600
-      - LIMIT_TIME_REAL=7200
-      - WORKERS=0
+      - ERP_PROXY_MODE=True
+      - ERP_LIMIT_TIME_CPU=5600
+      - ERP_LIMIT_TIME_REAL=7200
+      - ERP_WORKERS=0
       - WDB_SOCKET_SERVER=wdb
       - WDB_SOCKET_PORT=19840
       - WDB_WEB_SERVER=localhost:1984

@@ -2,7 +2,7 @@
 
 ## Cómo clonar este repositorio¿?
   * Agregue su id_pulbic (ssh) a la configuración de su cuenta en [gitlab](https://docs.gitlab.com/ee/ssh/).
-  * Clone el repositorio con el proyecto: `git clone --recurse-submodules https://github.com/yanpierchirino/erp.git`
+  * Clone el repositorio con el proyecto: `git clone -b 13.0 --recurse-submodules https://github.com/yanpierchirino/erp.git`
 
 ## Configuración de su entorno de desarrollo
 Independientemente de la plataforma, debe tener acceso una copia desprotegida del código.
@@ -27,6 +27,10 @@ resultará en un enlace cliqueable en los registros de Odoo.
 Investigue docker-compose.yml para obtener información adicional.
 
 Por favor, desarrolle nuevos modulos en nuevas ramas git y envíe solicitudes de fusion (merge request) contra la rama principal.
+
+## AGREGAR VARIABLES EN odoo.conf
+En el archivo docker-compose.yml agregue las variables de entorno para el odoo.conf en mayusculas y con el prefijo "ERP_", ejemplo: ERP_ADMIN_PASSWD=adminpwd
+No edite el archivo directamente ya que este se reconstruye automaticamente.
 
 <br/>
 <br/>
