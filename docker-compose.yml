@@ -20,8 +20,8 @@ services:
       - ./vendor/odoo/ce/odoo/addons:/usr/lib/python3/dist-packages/odoo/addons
     environment:
       - DB_HOST=db
-      - DB_USER=gangala
-      - DB_PASSWORD=M7LEA7chfE9
+      - DB_USER=odoo
+      - DB_PASSWORD=odoo
       - PROXY_MODE=True
       - LIMIT_TIME_CPU=5600
       - LIMIT_TIME_REAL=7200
@@ -39,8 +39,8 @@ services:
       - "5432:5432"
     environment:
       - POSTGRES_DB=postgres
-      - POSTGRES_PASSWORD=M7LEA7chfE9
-      - POSTGRES_USER=gangala
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - db-data:/var/lib/postgresql/data/pgdata
