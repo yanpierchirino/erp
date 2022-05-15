@@ -5,28 +5,30 @@ services:
     tty: true
     image: "${IMAGE}:${ODOO_VERSION}-dev"
     container_name: erp
-    command: ['--dev', 'reload']
+#   command: ['--dev', 'reload'] # Disable for Mac OS with M1 chip
     depends_on:
       - db
       - wdb
     ports:
       - "8069:8069"
       - "8072:8072"
+      - "5555:5555"
     volumes:
       - web-data:/var/lib/odoo
       - ./src:/mnt/src-addons/src
       - ./vendor:/mnt/vendor-addons
-      - ./vendor/odoo/ce/addons:/var/lib/odoo/addons/15.0
-      - ./vendor/odoo/ce/odoo/addons:/usr/lib/python3/dist-packages/odoo/addons
+      # - ./vendor/odoo/ce/addons:/var/lib/odoo/addons/15.0
+      # - ./vendor/odoo/ce/odoo/addons:/usr/lib/python3/dist-packages/odoo/addons
     environment:
       - ERP_DB_HOST=db
       - ERP_DB_PORT=5432
       - ERP_DB_USER=odoo
       - ERP_DB_PASSWORD=odoo
-      - ERP_PROXY_MODE=True
       - ERP_LIMIT_TIME_CPU=5600
       - ERP_LIMIT_TIME_REAL=7200
+      - ERP_PROXY_MODE=True
       - ERP_WORKERS=0
+      - ERP_ADMIN_PASSWD=super-secret-pass
       - WDB_SOCKET_SERVER=wdb
       - WDB_SOCKET_PORT=19840
       - WDB_WEB_SERVER=localhost:1984
@@ -49,7 +51,7 @@ services:
       - webapp
 
   wdb:
-    image: kozea/wdb:3.3.0
+    image: shepilovvladislav/wdb
     ports: ['1984:1984']
     networks:
       - webapp
