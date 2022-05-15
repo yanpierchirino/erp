@@ -5,19 +5,20 @@ services:
     tty: true
     image: "${IMAGE}:${ODOO_VERSION}-dev"
     container_name: erp
-    command: ['--dev', 'reload']
+    # command: ['--dev', 'reload'] # Disable for Mac OS with M1 chip
     depends_on:
       - db
       - wdb
     ports:
       - "8069:8069"
       - "8072:8072"
+      - "5555:5555"
     volumes:
       - web-data:/var/lib/odoo
       - ./src:/mnt/src-addons/src
       - ./vendor:/mnt/vendor-addons
-      - ./vendor/odoo/ce/addons:/var/lib/odoo/addons/13.0
-      - ./vendor/odoo/ce/odoo/addons:/usr/lib/python3/dist-packages/odoo/addons
+      # - ./vendor/odoo/ce/addons:/var/lib/odoo/addons/13.0
+      # - ./vendor/odoo/ce/odoo/addons:/usr/lib/python3/dist-packages/odoo/addons
     environment:
       - DB_HOST=db
       - DB_USER=odoo
@@ -48,7 +49,8 @@ services:
       - webapp
 
   wdb:
-    image: kozea/wdb:3.3.0
+    image: shepilovvladislav/wdb
+    container_name: wdb
     ports: ['1984:1984']
     networks:
       - webapp
