@@ -1,4 +1,4 @@
-# ERP (Docker basado en Odoo v12)
+# ERP (Docker basado en Odoo v11)
 
 ## Cómo clonar este repositorio¿?
   * Agregue su id_pulbic (ssh) a la configuración de su cuenta en [gitlab](https://docs.gitlab.com/ee/ssh/).

@@ -18,10 +18,10 @@ cache:
 
 Release:
   stage: build
-  timeout: 3h
+  timeout: 1h
   only:
     refs:
-      - '12.0'
+      - '11.0'
   except:
     refs: ['/^hotfix\/.*$/', 'schedules']
   before_script:
