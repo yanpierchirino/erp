@@ -1,15 +1,15 @@
-# ERP (Docker basado en Odoo v15)
+# ERP (Docker basado en Odoo v16)
 
 ## Cómo clonar este repositorio¿?
   * Agregue su id_pulbic (ssh) a la configuración de su cuenta en [gitlab](https://docs.gitlab.com/ee/ssh/).
-  * Clone el repositorio con el proyecto: `git clone -b 15.0 --recurse-submodules https://github.com/yanpierchirino/erp.git`
+  * Clone el repositorio con el proyecto: `git clone -b 16.0 --recurse-submodules https://github.com/yanpierchirino/erp.git`
 
 ## Configuración de su entorno de desarrollo
 Independientemente de la plataforma, debe tener acceso una copia desprotegida del código.
 
 ### ... en Linux / MacOS
   * Asegúrese de que [Docker](https://docs.docker.com/install/) y [Docker-Compose](https://docs.docker.com/compose/install/) estén instalados, según el método preferido de su distribución .
-  * Asegurate de tener los permisos necesarios sobre el directorio del proyecto, ejecuta `sudo chmod -R 777 erp`
+  * Asegurate de tener los permisos necesarios sobre el directorio del proyecto, ejecuta `sudo chmod -R 775 erp`
   * valla a su directorio del código clonado `cd erp`
   * Ejecutar en la terminal `make init`
 

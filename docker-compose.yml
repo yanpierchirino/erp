@@ -17,8 +17,6 @@ services:
       - web-data:/var/lib/odoo
       - ./src:/mnt/src-addons/src
       - ./vendor:/mnt/vendor-addons
-      # - ./vendor/odoo/ce/addons:/var/lib/odoo/addons/15.0
-      # - ./vendor/odoo/ce/odoo/addons:/usr/lib/python3/dist-packages/odoo/addons
     environment:
       - ERP_DB_HOST=db
       - ERP_DB_PORT=5432
@@ -26,7 +24,7 @@ services:
       - ERP_DB_PASSWORD=odoo
       - ERP_LIMIT_TIME_CPU=5600
       - ERP_LIMIT_TIME_REAL=7200
-      - ERP_PROXY_MODE=True
+      - ERP_PROXY_MODE=False
       - ERP_WORKERS=0
       - ERP_ADMIN_PASSWD=super-secret-pass
       - WDB_SOCKET_SERVER=wdb

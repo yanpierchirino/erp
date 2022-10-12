@@ -18,10 +18,10 @@ cache:
 
 Release:
   stage: build
-  timeout: 3h
+  timeout: 1h
   only:
     refs:
-      - '15.0'
+      - '16.0'
   except:
     refs: ['/^hotfix\/.*$/', 'schedules']
   before_script:
@@ -36,5 +36,3 @@ Release:
   - docker build --tag "${image}-${CI_PIPELINE_IID}" --build-arg FROM_IMAGE="${fromimage}" .
   - docker push "${image}-${CI_PIPELINE_IID}" &> /dev/null
   - echo "${image}-${CI_PIPELINE_IID}"
-  tags:
-    - erp
