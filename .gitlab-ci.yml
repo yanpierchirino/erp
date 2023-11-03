@@ -21,7 +21,7 @@ Release:
   timeout: 1h
   only:
     refs:
-      - '16.0'
+      - '17.0'
   except:
     refs: ['/^hotfix\/.*$/', 'schedules']
   before_script:

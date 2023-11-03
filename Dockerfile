@@ -1,6 +1,6 @@
 ARG  FROM_IMAGE
 FROM ${FROM_IMAGE}
-MAINTAINER Yan Chirino <support@yanchirino.com>
+LABEL MAINTAINER Yan Chirino <support@yanchirino.com>
 
 USER root
 

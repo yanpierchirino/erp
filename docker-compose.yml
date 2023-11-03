@@ -3,6 +3,7 @@ version: '3.4'
 services:
   erp:
     tty: true
+    platform: ${PLATFORM}
     image: "${IMAGE}:${ODOO_VERSION}-dev"
     container_name: erp
 #   command: ['--dev', 'reload'] # Disable for Mac OS with M1 chip
@@ -34,7 +35,7 @@ services:
       - webapp
 
   db:
-    image: postgres:12
+    image: postgres:15.0
     container_name: psql
     ports:
       - "5432:5432"

@@ -28,11 +28,11 @@ submodule-add:
 
 ### Pulling images
 pull:
-	docker pull $(FROM):$(FROM_VERSION)
+	docker pull --platform $(PLATFORM) $(FROM):$(FROM_VERSION)
 
 ### Building images
 build-base:
-	docker build --tag $(IMAGE):$(ODOO_VERSION) --build-arg "FROM_IMAGE=$(FROM):$(FROM_VERSION)" .
+	docker build --platform $(PLATFORM) --tag $(IMAGE):$(ODOO_VERSION) --build-arg "FROM_IMAGE=$(FROM):$(FROM_VERSION)" .
 
 build-dev:
-	docker build -f dev-tools/Dockerfile --tag $(IMAGE):$(ODOO_VERSION)-dev --build-arg "FROM_IMAGE=$(IMAGE):$(ODOO_VERSION)" .
+	docker build --platform $(PLATFORM) -f dev-tools/Dockerfile --tag $(IMAGE):$(ODOO_VERSION)-dev --build-arg "FROM_IMAGE=$(IMAGE):$(ODOO_VERSION)" .
